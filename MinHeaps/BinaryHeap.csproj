@@ -7,8 +7,8 @@
     <ProjectGuid>{7723BBC3-A6A7-4E68-8E53-C09C6A2CB041}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MinHeaps</RootNamespace>
-    <AssemblyName>MinHeaps</AssemblyName>
+    <RootNamespace>BinaryHeap</RootNamespace>
+    <AssemblyName>BinaryHeap</AssemblyName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>KouXiaGu.BinaryHeap.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

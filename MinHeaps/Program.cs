@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MinHeaps
+namespace KouXiaGu.BinaryHeap
 {
     class Program
     {
