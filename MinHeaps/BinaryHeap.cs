@@ -9,7 +9,7 @@ namespace MinHeaps
     /// 二叉堆;
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class BinaryHeap<T> : IEnumerable<T>
+    public abstract class BinaryHeap<T> : ICollection<T>, IEnumerable<T>
     {
         public BinaryHeap()
         {
@@ -59,6 +59,14 @@ namespace MinHeaps
             }
         }
 
+        bool ICollection<T>.IsReadOnly
+        {
+            get
+            {
+                return ((ICollection<T>)this.collection).IsReadOnly;
+            }
+        }
+
         /// <summary>
         /// 比较 other 是否置于 current 之前;
         /// </summary>
@@ -71,6 +79,22 @@ namespace MinHeaps
         {
             collection.Add(item);
             BubbleUp(lastNodeIndex);
+        }
+
+        public bool Remove(T item)
+        {
+            if (Count == 0)
+                return false;
+
+            int index = collection.IndexOf(item, rootIndex, Count);
+            if (index == -1)
+                return false;
+
+            collection[index] = collection[lastNodeIndex];
+            BubbleDown(index);
+            collection.RemoveAt(lastNodeIndex);
+
+            return true;
         }
 
         /// <summary>
